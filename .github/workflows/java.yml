@@ -61,8 +61,8 @@ jobs:
         with:
           context: java/${{ matrix.tag }}
           push: ${{ github.event_name != 'pull_request' }}
-          tags: java-${{ matrix.tag}}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: java-${{ matrix.tag }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
